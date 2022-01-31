@@ -73,5 +73,15 @@ describe('wallet test suite', () => {
         //     const wallet: Wallet = Wallet.of(noBalanceSample.trx);
         //     expect(wallet.balance).to.be.equal(noBalanceSample.finalBalance);
         // });
+        it('should work properly with credit',()=>{           
+            const messages = [
+                {type: "create", owner: "Mr. Banana", balance: 1000},
+                {type: "credit", value: 100},               
+            ]
+
+            const wallet: Wallet = Wallet.of(messages);
+            expect(wallet.balance).to.be.equal(1100);           
+            
+        })
     })
 });

@@ -2,8 +2,9 @@ type MessagensProps = {
     type: string,
     owner?: string,
     balance?: number,
-    value?: number,    
+    value?: number   
 } 
+
 
 export default class Wallet{
     balance: number 
@@ -12,15 +13,31 @@ export default class Wallet{
         this.balance = balance 
         this.operations = []
         
+    } 
+    
+    static  sumCredit(messages:MessagensProps[]):number{
+        const creditOperation:MessagensProps[] =  messages.filter((oper)=> oper.type === "credit")
+        return  creditOperation.reduce((acc, oper) => {
+           return acc + (oper.value || 0)
+       },0)
+       
     }
-    //static create(){}
     
     static of(messages:MessagensProps[]): Wallet {
-       
-       if (messages[0].type === "create") {
-          return new Wallet({...messages[0]})
-          
-       } 
-       return {balance:0, operations:[]}
-    }
+        let wallet : Wallet = {balance:0, operations:[]};
+        
+       messages.forEach((message)=> {
+            if (message.type === "create") {
+                wallet =  new Wallet(message ) 
+            }
+            if (message.type === "credit"){
+            wallet.balance += Wallet.sumCredit(messages)
+            }
+            if (message.type === "debit"){
+                wallet.balance -= Wallet.sumCredit(messages)
+            }
+       })     
+        return wallet 
+            
+  }
 }
