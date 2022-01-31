@@ -16,6 +16,8 @@ describe('wallet test suite', () => {
             ]
             const wallet: Wallet = Wallet.of(messages);
             expect(wallet.balance).to.be.equal(1000);
+            expect(wallet.operations).to.be.deep.equal([]);
+            // expect(wallet.operations).to.be.deep.equal([{createdAt: "1341234981934", type: "credit", value: 1000}, ...]);
         });
     })
     describe("give an existent wallet", () => {
