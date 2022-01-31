@@ -1,0 +1,10 @@
+{
+    "trx": [
+        {"type": "create", "owner": "Mr. Banana" },
+        {"type": "credit", "value": 1000 },
+        {"type": "debit", "value": 100 },
+        {"type": "credit", "value": 100 },
+        {"type": "credit", "value": 100 }
+    ],
+    "finalBalance": 1100
+}

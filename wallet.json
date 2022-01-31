@@ -1,7 +1,0 @@
-[
-    {"type": "create", "owner": "Mr. Banana" , "createdAt": "123890819231" },
-    {"type": "credit", "value": 1000, "createdAt": "123890819245" },
-    {"type": "debit", "value": 100, "createdAt": "223890819289" },
-    {"type": "credit", "value": 100, "createdAt": "323890819289" },
-    {"type": "credit", "value": 100, "createdAt": "423890819289" }
-]
