@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import Wallet from '../src/wallet';
-//import * as someBalanceSample from './some-balance-wallet.json';
-//import * as noBalanceSample from './no-balance-wallet.json';
+// import * as someBalanceSample from './some-balance-wallet.json';
+// import * as noBalanceSample from './no-balance-wallet.json';
 
 describe('wallet test suite', () => {
     describe("give a non existent wallet", () => {
