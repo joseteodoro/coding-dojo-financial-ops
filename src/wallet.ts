@@ -1,22 +1,26 @@
 type MessagensProps = {
     type: string,
-    owner: string,
-    balance: number,
+    owner?: string,
+    balance?: number,
+    value?: number,    
 } 
 
 export default class Wallet{
     balance: number 
-    constructor({type, owner, balance }:MessagensProps){
+    operations: any[]
+    constructor({ balance=0 }:MessagensProps){
         this.balance = balance 
+        this.operations = []
         
     }
+    //static create(){}
     
-    static of(messages:MessagensProps[]): Wallet{
+    static of(messages:MessagensProps[]): Wallet {
        
        if (messages[0].type === "create") {
-          return new Wallet({balance:0, ...messages[0]})
+          return new Wallet({...messages[0]})
           
        } 
-       return null
+       return {balance:0, operations:[]}
     }
 }
