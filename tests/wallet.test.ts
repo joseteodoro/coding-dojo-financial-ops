@@ -3,7 +3,7 @@ import Wallet from '../src/wallet';
 // import * as someBalanceSample from './some-balance-wallet.json';
 // import * as noBalanceSample from './no-balance-wallet.json';
 
-describe('wallet test suite', () => {
+describe.skip('wallet test suite', () => {
     describe("give a non existent wallet", () => {
         it('simple wallet creation should return balance zero', () => {
             const messages = [
