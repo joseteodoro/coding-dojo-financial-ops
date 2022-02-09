@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.25.0",
     "tslint-config-airbnb": "^5.11.2"
   },
   "devDependencies": {
