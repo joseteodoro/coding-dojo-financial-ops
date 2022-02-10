@@ -7,8 +7,8 @@ describe('watcher test suite', () => {
         expect(results).to.be.deep.equal([])
     })
 
-    it('return 404 for inexistant url', async () => {
-        const results = await watcher.evaluateAll(['http://lskc8093rnw3.com'])
-        expect(results).to.be.deep.equal([404])
+    it('return 404 for inexistant url and 200 for a valid url', async () => {
+        const results = await watcher.evaluateAll(['https://stackoverflow.com/non-existent', 'http://google.com'])
+        expect(results).to.be.deep.equal([404, 200])
     })
 })
